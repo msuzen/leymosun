@@ -1,0 +1,20 @@
+from leymosun.random import random_integer, get_rng, binomial
+from numpy.random import RandomState, BitGenerator, PCG64
+import numpy as np
+
+def test_random_integer():
+    seed_int = random_integer(bits=64)
+    assert seed_int.bit_length() < 65
+    seed_int = random_integer(bits=32)
+    assert seed_int.bit_length() < 33
+    
+def test_get_rng():
+    rng = get_rng(bitgen=PCG64, seed_bits=42)
+    assert isinstance(rng, RandomState)
+    
+def test_binomial():
+    n = 1000
+    p = 0.7
+    values = np.array([binomial(n, p) for _ in range(1000)])
+    assert np.mean(values) < 1.1*n*p
+    
