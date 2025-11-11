@@ -1,0 +1,7 @@
+v0.1.54
+
+* New functions for HE-RNG module: random, normal and unit tests for them.
+* Updates in README: Citation, some more details on HE-RNG, FQ url for some of the links.
+* NEWS file for version update details.
+
+

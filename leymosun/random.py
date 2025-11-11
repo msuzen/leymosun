@@ -47,7 +47,7 @@ def binomial(n: int, p: float, bitgen: BitGenerator = PCG64, seed_bits: int = 64
         seed_bits: Number of bits to use to generate seed.
 
     Returns:
-        integer value
+        integer value from binomial distribution
 
     """
     rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
@@ -62,5 +62,52 @@ def randint(
     bitgen: BitGenerator = PCG64,
     seed_bits: int = 64,
 ):
+    """Uniform strong random integer on the given interval
+
+     Args:
+        low: Lower bound [low, high]
+        high: Higher bound [low, high]
+        size: Number of integers to generate
+        dtype: Number of bits to use to generate seed.
+        bitgen: Bitgenerator, defaults PCG64
+        seed_bits: Number of bits to use to generate seed.
+
+    Returns:
+        integer value from binomial distribution
+
+    """
     rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
     return rng.randint(low, high, size, dtype)
+
+
+def random(size: int, bitgen: BitGenerator = PCG64, seed_bits: int = 64):
+    """Uniform strong random float in the half open interval [0.1.0]
+
+     Args:
+        size: Number of floats to generate
+        bitgen: Bitgenerator, defaults PCG64
+        seed_bits: Number of bits to use to generate seed.
+
+    Returns:
+        np.array of float within the half open interval [0.1.0]
+
+    """
+    rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
+    return rng.random(size)
+
+def normal(loc:float=0.0, scale:float=1.0, size:int=None, bitgen: BitGenerator = PCG64, seed_bits: int = 64):
+    """Generate Normal distribution numbers, or given Gaussian parameters
+
+     Args:
+        loc: mean parameter, defaults to 0.0 for normal.
+        scale: sigma, standard deviation, defaults to 1.0 for normal.
+        size: Number of floats to generate
+        bitgen: Bitgenerator, defaults PCG64
+        seed_bits: Number of bits to use to generate seed.
+
+    Returns:
+        np.array of float within the half open interval [0.1.0]
+
+    """
+    rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
+    return rng.normal(loc=loc, scale=scale, size=size)

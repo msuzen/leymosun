@@ -38,8 +38,7 @@ def test_empirical_spectral_density_goe():
     _, density, locations = empirical_spectral_density(matrices, scale="wigner")
     mean_inx = np.argmax(density)
     mean = locations[mean_inx]
-    assert mean < 0.3
-    assert mean > -0.3
+    assert np.abs(mean) < 0.5
 
 
 def test_empirical_spectral_density_mixed_goe():

@@ -1,11 +1,11 @@
-from leymosun.random import random_integer, get_rng, binomial
+from leymosun.random import he_random_integer, get_rng, binomial, normal
 from numpy.random import RandomState, BitGenerator, PCG64
 import numpy as np
 
 def test_random_integer():
-    seed_int = random_integer(bits=64)
+    seed_int = he_random_integer(bits=64)
     assert seed_int.bit_length() < 65
-    seed_int = random_integer(bits=32)
+    seed_int = he_random_integer(bits=32)
     assert seed_int.bit_length() < 33
     
 def test_get_rng():
@@ -17,4 +17,11 @@ def test_binomial():
     p = 0.7
     values = np.array([binomial(n, p) for _ in range(1000)])
     assert np.mean(values) < 1.1*n*p
+
+def test_normal():
+    n = 1000
+    mu = 3.0
+    sigma = 1.0
+    values = normal(loc=mu, scale=sigma, size=n)
+    assert np.mean(values) < 3.1
     
