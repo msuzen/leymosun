@@ -25,7 +25,8 @@ def mixed_ensemble(
     degree_of_mixture: float,
     sampler: Callable[[int], np.array],
 ) -> list:
-    """Generate a representative matrix ensemble given sampler function
+    """Generate a representative mixed matrix ensemble given sampler function.
+       Implements Mixed Matrix Ensemble Sampling (MMES) algorithm [suzen21]
 
     Args:
         matrix_order: A square matrix size, order.

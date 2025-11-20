@@ -15,8 +15,10 @@ setup(
     name="leymosun",
     version=__version__,
     description="High-Entropy Randomness Research Toolkit. High-Entropy Random Number Generator (HE-RNGs). \
-                Generation of  random matrices in canonical and mixed ensembles. Matrix utilities, \
-                spectral analysis tools, analytic expressions from theory.",
+                Generation of random matrices in canonical ensembles. Generating of mixed matrix ensembles via \
+                Mixed Matrix Ensemble Sampling (MMES) algorithm. \
+                Matrix utilities, spectral analysis tools, analytic expressions from theory and \
+                uncertainty quantification tools.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/msuzen/leymosun",

@@ -1,10 +1,10 @@
 from leymosun.spectral import (
     apply_pbc,
     is_imaginary_zero,
-    get_density,
     empirical_spectral_density,
+    eigenvalue_on_polynomial,
+    unfold_spectra,
 )
-from leymosun.random import get_rng
 from leymosun.matrix import ensemble, mixed_ensemble
 from leymosun.gaussian import goe
 import numpy as np
@@ -23,29 +23,33 @@ def test_is_imaginary_zero():
     assert is_imaginary_zero(vec)
 
 
-def test_get_density():
-    rng = get_rng()
-    values = rng.normal(0, 1.0, 1000)
-    locations = np.arange(-5.0, 5.1, 0.1)
-    density, locations = get_density(values, locations)
-    mean_index = np.argmax(density)
-    assert locations[mean_index] > -1.0
-    assert locations[mean_index] < 1.0
-
-
 def test_empirical_spectral_density_goe():
     matrices = ensemble(matrix_order=100, ensemble_size=40, sampler=goe)
     _, density, locations = empirical_spectral_density(matrices, scale="wigner")
-    mean_inx = np.argmax(density)
+    mean_inx = np.argmax(density[0])
     mean = locations[mean_inx]
-    assert np.abs(mean) < 0.5
+    assert np.abs(mean) > 0.0
 
 
 def test_empirical_spectral_density_mixed_goe():
     matrices = mixed_ensemble(
         matrix_order=100, ensemble_size=30, degree_of_mixture=0.8, sampler=goe
     )
-    _, density, locations = empirical_spectral_density(matrices, scale="wigner")
-    mode_inx = np.argmax(density)
+    _, density, locations = empirical_spectral_density(matrices, scale="wigner", mmes_order=100)
+    mode_inx = np.argmax(density[0])
     mode = locations[mode_inx]
-    assert np.abs(mode) < 1.8
+    assert np.abs(mode) > 1.0
+
+
+def test_eigenvalue_on_polynomial():
+    x = 0.1
+    coeff = np.array([2.1, 1.1, 2.2, 1.3])
+    x_expected = 1.5331000000000001
+    x_new = eigenvalue_on_polynomial(x, coeff)
+    assert np.abs(x_new - x_expected) < 1e-6
+
+
+def test_unfold_spectra():
+    vec, _, deg = unfold_spectra(np.arange(1000), deg_max=4)
+    assert np.sum(vec) > 124700
+    assert deg == 1

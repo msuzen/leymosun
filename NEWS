@@ -1,3 +1,24 @@
+v0.2.11
+
+* feature: New lecture: Wigner-Dyson Nearest neigbour spacing distribution. `wigner_spacing.ipynb`.
+* feature: Spectral unfolding functionaliy implemented and tested.
+* feature: Spectra with Uncertainty Quantification (UQ) for distributions. 
+  * Update lectures with UQ. 
+  * Removed eigenvalue pooling. 
+* feature: `choice` for random module
+* feature: `pdf` supporting arbitrary distance locations.
+* maintainance: `get_density` renamed to `pdf` and into `stats` module.
+* maintainance: README installation notes.
+* maintainance: Updates on `wigner_cat.ipynb` lecture, `setup.py` and `README.md` mentioning MMES algorithm.
+
+
+v0.1.55
+
+* Updates on text: README and package description.
+* Fix image showing Leymosun on README.
+* Lecture  wigner_semicircle.ipynb exercise 2, providing hint on scale.
+
+
 v0.1.54
 
 * New functions for HE-RNG module: random, normal and unit tests for them.

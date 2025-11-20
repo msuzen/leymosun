@@ -11,7 +11,18 @@
 A package for randomness based research. 
 
 > ![](https://raw.githubusercontent.com/msuzen/leymosun/refs/heads/main/assets/cat.png)  
-> **Figure** Empirical spectral density for mixed ensemble at $\mu=0.8$, so called `Wigner's Cats`.
+> **Figure** Empirical spectral density for mixed ensemble at $\mu=0.8$, so called `Wigner's Cats` with error bars. (See the lecture.)
+
+## Installation 
+
+It is recommended that latest stable package is released on the Python Package Index ([PyPI](https://pypi.org/project/leymosun/)). PyPI version should be installed via `pip`.
+
+```bash 
+pip install leymosun
+```
+
+It is recommended that package shouldn't be installed via github version control, unless it is a
+specific release.  
 
 ## Approach and features
 
@@ -29,13 +40,19 @@ The core package is providing strong randomness improving the simulation quality
   * Uniform integer on the given range
   * Uniform float on the given range
   * Normal distribution (Gaussian)
+  * Random sampling from a set, choice.
 
 ### Random Matrices
 * Generation of Gaussian ensembles (Orthogonal).
-* Generation of Mixed Gaussian ensembles (Orthogonal).
+* Generation of Mixed Gaussian ensembles (Orthogonal) via `Mixed Matrix Ensemble Sampling (MMES) algoritm`
 * Extract offdiagonal elements.
 * Spectra generation given ensemble.
-* Analytic distributions: Wigner semi-circle law. 
+* Spectral unfolding.
+* Analytic distributions: Wigner semi-circle law, neares-neigbour spacing.
+
+### Statistics
+* Centered PDF computation.
+* Bootstrapped uncertainty quantification given observation matrix. 
 
 ### Data manager
 * Storage object utilities.
@@ -45,6 +62,7 @@ The core package is providing strong randomness improving the simulation quality
 Lectures notes that introduce randomization concepts with the usage of `Leymosun`.
 
 * [wigner_semicircle.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_semicircle.ipynb): `Lecture on the Wigner's semicircle law`. The Wigner Semicircle law for the Gaussian Orthogonal Ensemble (GOE), comparison with the analytical case. 
+* [wigner_dyson_spacing.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_dyson_spacing.ipynb): `Lecture on the Wigner-Dyson nearest-neighbour distribution`. The Wigner-Dyson spacing law for the Gaussian Orthogonal Ensemble (GOE), comparison with the analytical case. 
 * [wigner_semicircle_mixed.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_semicircle_mixed.ipynb): `Lecture on the Wigner's cats`. Deviations from the Wigner Semicircle law for the mixed-Gaussian Orthogonal Ensemble (GOE). This would demonstrate, so-called "Wigner's Cats", i.e., the deviation makes the density looks like cat. 
 * [he_rng_nist.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/he_rng_nist.ipynb): `Lecture on Understanding High-Entropy RNGs with NIST  benchmark`. This lecture provides a way to test different RNGs or usage of RNGs via standard quality 
 tests. 
@@ -58,7 +76,7 @@ Papers, datasets and other material that used `leymosun`.
 
 ## Citation
 
-We would be grateful for a citation of our paper(s) if you use `leymosun` or ideas from the package in your research.  The following is the bibtex entry
+We would be grateful for a citation of our paper(s) if you use `leymosun` or ideas from the package in your research. Initial introduction of mixed matrix ensembles and MMES algorithm with M-shaped (Wigner's Cat) density [suzen21]. The following is the bibtex entry
 
 ```
 @article{suzen21,

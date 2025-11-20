@@ -111,3 +111,21 @@ def normal(loc:float=0.0, scale:float=1.0, size:int=None, bitgen: BitGenerator =
     """
     rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
     return rng.normal(loc=loc, scale=scale, size=size)
+
+def choice(size:int, ndraws:int, replace:bool, bitgen: BitGenerator = PCG64, seed_bits: int = 64):
+    """Draw integers from a sequence given size, with or without replacement.
+       Zero being the first index.
+    
+     Args:
+        size: upper size of the set.
+        ndraws: Number of draws
+        replace: With or without replacement
+        bitgen: Bitgenerator, defaults PCG64
+        seed_bits: Number of bits to use to generate seed.
+
+    Returns:
+        np.array of integers.
+
+    """
+    rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
+    return rng.choice(a=size, size=ndraws, replace=replace)
