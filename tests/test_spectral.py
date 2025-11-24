@@ -4,9 +4,11 @@ from leymosun.spectral import (
     empirical_spectral_density,
     eigenvalue_on_polynomial,
     unfold_spectra,
+    nnsd
 )
 from leymosun.matrix import ensemble, mixed_ensemble
 from leymosun.gaussian import goe
+from leymosun.random import normal
 import numpy as np
 
 
@@ -53,3 +55,8 @@ def test_unfold_spectra():
     vec, _, deg = unfold_spectra(np.arange(1000), deg_max=4)
     assert np.sum(vec) > 124700
     assert deg == 1
+    
+def test_nnsd():
+    sim_e2 = np.array([normal(size=1000) for _ in range(10)])
+    nnsd_densities, locations = nnsd(sim_e2)
+    assert nnsd_densities.shape[1] == 48

@@ -27,6 +27,7 @@ def mixed_ensemble(
 ) -> list:
     """Generate a representative mixed matrix ensemble given sampler function.
        Implements Mixed Matrix Ensemble Sampling (MMES) algorithm [suzen21]
+       Suzen 2021 https://hal.science/hal-03464130
 
     Args:
         matrix_order: A square matrix size, order.

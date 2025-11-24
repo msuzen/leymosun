@@ -57,10 +57,12 @@ def empirical_spectral_density(
     Args:
         ensemble_sample: List of matrices, representative of a matrix ensemble.
         mmes_order: If the ensemble is from mixed, put the max order used.
-                     Defaults to -1, not mixed order. When in use, this will 
+                     Defaults to -1, not mixed order. When in use, this will
                      pad the eigenvalues.
+                     MMES algorithm is based on Mixed Matrix Ensemble Sampling (MMES) 
+                     Suzen 2021 https://hal.science/hal-03464130
         locations: Eigenvalue locations that we compute the density.
-                   defaults np.arange(-2.05, 2.1, 0.05). Note that 
+                   defaults np.arange(-2.05, 2.1, 0.05). Note that
                    these are the bin centres.
         scale: Scale resulting eigenvalues,
                * Defaults to "no" : No scaling
@@ -115,13 +117,13 @@ def eigenvalue_on_polynomial(eigen: float, coefficients: np.array):
 
 def unfold_spectra(eigenvalues: np.array, iqr: bool = True, deg_max: int = 32):
     """Unfold given spectra and compute nearest neigbour spacing
-    
+
     Using polynomial fits, with optimal degree finding that
     makes mean spacing 1.0, the closest. Then transform
     them to new values.
-    
+
     We remove outliers as suggested in the literature.
-    
+
     - O. Bohigas, in Random matrices and chaotic dynamics
     (LesHouches Session LII, North-Holland, 1989).
     - On the spectral unfolding of chaotic and mixed systems,
@@ -133,10 +135,10 @@ def unfold_spectra(eigenvalues: np.array, iqr: bool = True, deg_max: int = 32):
 
     Returns:
         Tuple of 3:
-        Transformed eigenvalues (unfolded spectra). 
-        nearest neigbour spacings of unfolded spectra and the degree 
+        Transformed eigenvalues (unfolded spectra).
+        nearest neigbour spacings of unfolded spectra and the degree
         of the optimal polynomial
-     
+
     """
     if iqr:
         q25 = np.quantile(eigenvalues, 0.25)
@@ -156,8 +158,30 @@ def unfold_spectra(eigenvalues: np.array, iqr: bool = True, deg_max: int = 32):
     degree_ix = np.argmin(np.abs(np.array(fluctuation_levels) - 1.0))
     deg_opt = degrees[degree_ix]
     coefficients = np.polyfit(x, y, deg=deg_opt)
-    unfolded_eigenvalues =  np.array(
-            [eigenvalue_on_polynomial(x, coefficients) for x in eigenvalues_sorted]
-        )
+    unfolded_eigenvalues = np.array(
+        [eigenvalue_on_polynomial(x, coefficients) for x in eigenvalues_sorted]
+    )
     unfolded_eigen = np.sort(unfolded_eigenvalues)
     return unfolded_eigen, np.diff(unfolded_eigen), deg_opt
+
+
+def nnsd(eigenvalues: np.array, locations: np.array = np.arange(0.0, 5.0, 0.1)):
+    """Compute Nearest-Neigbour Spacing Densities (NNSD) given eigenvalues with 
+       polynomial unfolding.
+
+    Args:
+        eigenvalues: 2D, eigenvalues over repeaded samples.
+        locations: Centers to compute PDF of NNSD.
+
+    Returns:
+        Tuple of two: NNSDs 2D and location bins
+
+    """
+    nnsd_densities = []
+    for eigenvalue in eigenvalues:
+        _, ueigenvalues_nn, _ = unfold_spectra(
+            eigenvalue, deg_max=30, iqr=True
+        )
+        density, _locations = pdf(ueigenvalues_nn, locations=locations)
+        nnsd_densities.append(density)
+    return np.array(nnsd_densities), np.array(_locations)

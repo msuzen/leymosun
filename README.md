@@ -48,7 +48,8 @@ The core package is providing strong randomness improving the simulation quality
 * Extract offdiagonal elements.
 * Spectra generation given ensemble.
 * Spectral unfolding.
-* Analytic distributions: Wigner semi-circle law, neares-neigbour spacing.
+* Nearest-Neigbour Spacing Densities (NNSD).
+* Analytic distributions: Wigner semi-circle law, nearest-neigbour spacing.
 
 ### Statistics
 * Centered PDF computation.
