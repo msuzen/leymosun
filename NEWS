@@ -1,3 +1,7 @@
+v0.2.32
+
+* Addition of `mean_adjacent_gap_ratio` and test.
+
 v0.2.22
 
 * NNSD with spectral unfolding. Implemented and tested.

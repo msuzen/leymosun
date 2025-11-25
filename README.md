@@ -47,8 +47,9 @@ The core package is providing strong randomness improving the simulation quality
 * Generation of Mixed Gaussian ensembles (Orthogonal) via `Mixed Matrix Ensemble Sampling (MMES) algoritm`
 * Extract offdiagonal elements.
 * Spectra generation given ensemble.
-* Spectral unfolding.
+* Robust Spectral unfolding.
 * Nearest-Neigbour Spacing Densities (NNSD).
+* Adjacent gap ratio.
 * Analytic distributions: Wigner semi-circle law, nearest-neigbour spacing.
 
 ### Statistics

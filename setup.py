@@ -17,7 +17,8 @@ setup(
     description="High-Entropy Randomness Research Toolkit. High-Entropy Random Number Generator (HE-RNGs). \
                 Generation of random matrices in canonical ensembles. Generating of mixed matrix ensembles via \
                 Mixed Matrix Ensemble Sampling (MMES) algorithm. \
-                Matrix utilities, spectral analysis tools, analytic expressions from theory and \
+                Matrix utilities, spectral analysis, spectral unfolding, nearest-neighbor spacing, \
+                mean adjacent gap ratio, analytic expressions from theory and \
                 uncertainty quantification tools.",
     long_description=long_description,
     long_description_content_type="text/markdown",

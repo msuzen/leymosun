@@ -4,7 +4,8 @@ from leymosun.spectral import (
     empirical_spectral_density,
     eigenvalue_on_polynomial,
     unfold_spectra,
-    nnsd
+    nnsd,
+    mean_adjacent_gap_ratio
 )
 from leymosun.matrix import ensemble, mixed_ensemble
 from leymosun.gaussian import goe
@@ -60,3 +61,8 @@ def test_nnsd():
     sim_e2 = np.array([normal(size=1000) for _ in range(10)])
     nnsd_densities, locations = nnsd(sim_e2)
     assert nnsd_densities.shape[1] == 48
+    
+def test_mean_adjacent_gap_ratio():
+    sim_e2 = np.array([normal(size=1000) for _ in range(10)])
+    r = mean_adjacent_gap_ratio(sim_e2)
+    assert r > 0.0 

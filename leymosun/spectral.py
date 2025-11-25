@@ -185,3 +185,25 @@ def nnsd(eigenvalues: np.array, locations: np.array = np.arange(0.0, 5.0, 0.1)):
         density, _locations = pdf(ueigenvalues_nn, locations=locations)
         nnsd_densities.append(density)
     return np.array(nnsd_densities), np.array(_locations)
+
+
+def mean_adjacent_gap_ratio(eigenvalues):
+    """Compute ratio of adjacent spacing gap ratio
+       Due to Oganesyan-Huse Phys. Rev. B 75, 155111 (2007)
+
+    Args:
+        eigenvalues: 2D, eigenvalues over repeaded samples.
+        locations: Centers to compute PDF of NNSD.
+
+    Returns:
+        Mean given ensemble of eigenvalues
+
+    """
+    adjacent_gap_ratios = []
+    for eigens in  eigenvalues:
+        eigens_sorted = np.sort(eigens)
+        spacings = np.diff(eigens_sorted)
+        adjacent_gap_ratio = np.minimum(spacings[:-1], spacings[1:]) /(np.maximum(spacings[:-1], spacings[1:])+1e-9)
+        adjacent_gap_ratios.append(np.mean(adjacent_gap_ratio))
+    bar_adjacent_gap_ratio = np.mean(adjacent_gap_ratios)
+    return bar_adjacent_gap_ratio
