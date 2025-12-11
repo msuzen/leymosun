@@ -26,10 +26,8 @@ specific release.
 
 ## Approach and features
 
-The package provides tools and utilities for randomness based research with `High-Entropy Random Number Generation (HE-RNG)`. It means generation iss performed with non-deterministic seeds every time a random
+The package provides tools and utilities for randomness based research with `High-Entropy Random Number Generation (HE-RNG)`. It means generation is performed with non-deterministic seeds every time a random
 library function is called. 
-
-There is a common misconception in computational sciences that speed is the ultimate goal, however primary objective is scientific correctness first. For this reasons, scientific correctness is taken precedence over speed in the development of the package. For proven methods being a baseline, we might implement faster versions. 
 
 ### High-entropy random number utilities 
 
@@ -68,6 +66,16 @@ Lectures notes that introduce randomization concepts with the usage of `Leymosun
 * [wigner_semicircle_mixed.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_semicircle_mixed.ipynb): `Lecture on the Wigner's cats`. Deviations from the Wigner Semicircle law for the mixed-Gaussian Orthogonal Ensemble (GOE). This would demonstrate, so-called "Wigner's Cats", i.e., the deviation makes the density looks like cat. 
 * [he_rng_nist.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/he_rng_nist.ipynb): `Lecture on Understanding High-Entropy RNGs with NIST  benchmark`. This lecture provides a way to test different RNGs or usage of RNGs via standard quality 
 tests. 
+
+## Development notes 
+* Philosophy  
+  There is a common misconception in computational sciences that speed is the ultimate goal, however primary objective is scientific correctness first. For this reasons, scientific correctness is taken precedence over speed in the development of the package. For proven methods being a baseline, we might implement faster versions. 
+* Testing 
+  * `tests` and `nbconvert` should be present as recommended dependency.
+  * Test script should pass before any release. 
+    Unit tests `runtests.sh` and lectures `runlectures.sh`. (`lecturePy` directory is needed but this is ignored in the repo via `.gitignore`).
+  * Add unit tests for each new method and features. 
+  * Add run portion for the new lecture in `runlecture.sh`.
 
 ## Publications
 

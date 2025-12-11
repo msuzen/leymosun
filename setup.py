@@ -1,7 +1,8 @@
 from setuptools import setup
 
 fp = open("./leymosun/version.py")
-exec(fp.read())
+sversion = fp.read()
+__version__ = sversion.split('=')[1][1:-1]
 
 with open("README.md") as f:
     long_description = f.read()
@@ -34,7 +35,7 @@ setup(
     ],
     test_suite="tests",
     extras_require={
-        "test":["pytest==8.4.2", "coverage==7.10.7", "pytest-cov==7.0.0"]
+        "test":["pytest==8.4.2", "coverage==7.10.7", "pytest-cov==7.0.0", "nbconvert==7.16.6"]
     },
     zip_safe=False,
 )

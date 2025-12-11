@@ -25,7 +25,7 @@ def goe(matrix_order: int, scale: float = 1.0, loc: float= 0.0, bitget: BitGener
     return 0.50 * (A + A.transpose())
 
 
-def wigner(locations: np.array, domasigmin_boundary=2.0):
+def wigner(locations: np.array, domain_boundary=2.0):
     """Wigner semi-circle density for GOE
 
     Density is defined as
@@ -39,7 +39,7 @@ def wigner(locations: np.array, domasigmin_boundary=2.0):
         The density at the locations, list.
 
     """
-    domain_boundary_sqr = domasigmin_boundary**2
+    domain_boundary_sqr = domain_boundary**2
     return [
         2.0
         * np.sqrt(np.abs(domain_boundary_sqr - x**2))

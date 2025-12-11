@@ -1,3 +1,9 @@
+v0.2.38
+
+* `runlectures.sh` is added for running lectures notebooks on CLI for testing. 
+* Update in README, new section about developments.
+* Update how version is updated in `setup.py` dropping `exec` like practice.
+
 v0.2.33
 
 * `mean_adjacent_gap_ratio`, return ratios matrix as well.
