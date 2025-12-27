@@ -3,7 +3,7 @@ from leymosun.random import choice
 
 
 def pdf(values: np.array, locations: np.array) -> tuple[np.array, np.array]:
-    """Compute density given values and arbitary monotonic locations of bin centres.
+    """Compute density given values and arbitrary monotonic locations of bin centres.
 
      Args:
         values: set of values that density should be computed.

@@ -43,3 +43,13 @@ python lecturePy/wigner_semicircle.py
 echo " "
 echo " Success running wigner_semicircle.ipynb"
 echo " "
+# spectral_unfolding.ipynb
+echo " "
+echo " Running spectral_unfolding.ipynb"
+echo " "
+rm -f lecturePy/wigner_semicircle.py
+jupyter nbconvert --to python lectures/spectral_unfolding.ipynb --output-dir=./lecturePy --log-level=ERROR
+python lecturePy/spectral_unfolding.py
+echo " "
+echo " Success running spectral_unfolding.ipynb"
+echo " "

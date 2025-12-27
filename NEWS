@@ -1,3 +1,12 @@
+v0.2.42
+
+* `README.md`: 
+ * Note regarding reproducibility and non-reproducible RNGs.
+ * Minor typo.
+* Updated Zenodo release.
+* `nnsd`, new switch `unfold`, defaults to TRUE
+* `spectral_unfolding.ipynb` new lecture and added to lecture's test.
+
 v0.2.38
 
 * `runlectures.sh` is added for running lectures notebooks on CLI for testing. 

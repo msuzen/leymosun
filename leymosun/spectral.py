@@ -59,7 +59,7 @@ def empirical_spectral_density(
         mmes_order: If the ensemble is from mixed, put the max order used.
                      Defaults to -1, not mixed order. When in use, this will
                      pad the eigenvalues.
-                     MMES algorithm is based on Mixed Matrix Ensemble Sampling (MMES) 
+                     MMES algorithm is based on Mixed Matrix Ensemble Sampling (MMES)
                      Suzen 2021 https://hal.science/hal-03464130
         locations: Eigenvalue locations that we compute the density.
                    defaults np.arange(-2.05, 2.1, 0.05). Note that
@@ -165,24 +165,30 @@ def unfold_spectra(eigenvalues: np.array, iqr: bool = True, deg_max: int = 32):
     return unfolded_eigen, np.diff(unfolded_eigen), deg_opt
 
 
-def nnsd(eigenvalues: np.array, locations: np.array = np.arange(0.0, 5.0, 0.1)):
-    """Compute Nearest-Neigbour Spacing Densities (NNSD) given eigenvalues with 
+def nnsd(
+    eigenvalues: np.array,
+    locations: np.array = np.arange(0.0, 5.0, 0.1),
+    unfold: bool = True,
+):
+    """Compute Nearest-Neigbour Spacing Densities (NNSD) given eigenvalues with
        polynomial unfolding.
 
     Args:
         eigenvalues: 2D, eigenvalues over repeaded samples.
-        locations: Centers to compute PDF of NNSD.
+        locations: Centers to compute PDF of NNSD, defaults to [0, 5] with 0.1 spacing.
+        unfold: whether to unfold, defaults to True.
 
     Returns:
-        Tuple of two: NNSDs 2D and location bins
+        Tuple of three: NNSDs 2D and location bins
 
     """
     nnsd_densities = []
     for eigenvalue in eigenvalues:
-        _, ueigenvalues_nn, _ = unfold_spectra(
-            eigenvalue, deg_max=30, iqr=True
-        )
-        density, _locations = pdf(ueigenvalues_nn, locations=locations)
+        if unfold:
+            _, eigenvalue, _ = unfold_spectra(eigenvalue, deg_max=30, iqr=True)
+        else:
+            eigenvalue = np.diff(eigenvalue)
+        density, _locations = pdf(eigenvalue, locations=locations)
         nnsd_densities.append(density)
     return np.array(nnsd_densities), np.array(_locations)
 
@@ -201,10 +207,12 @@ def mean_adjacent_gap_ratio(eigenvalues):
     """
     adjacent_gap_ratios = []
     adjacent_gap_ratios_mean = []
-    for eigens in  eigenvalues:
+    for eigens in eigenvalues:
         eigens_sorted = np.sort(eigens)
         spacings = np.diff(eigens_sorted)
-        adjacent_gap_ratio = np.minimum(spacings[:-1], spacings[1:]) /(np.maximum(spacings[:-1], spacings[1:])+1e-9)
+        adjacent_gap_ratio = np.minimum(spacings[:-1], spacings[1:]) / (
+            np.maximum(spacings[:-1], spacings[1:]) + 1e-9
+        )
         adjacent_gap_ratios.append(adjacent_gap_ratio)
         adjacent_gap_ratios_mean.append(np.mean(adjacent_gap_ratio))
     bar_adjacent_gap_ratio = np.mean(adjacent_gap_ratios_mean)
