@@ -11,7 +11,9 @@
 A package for randomness based research. 
 
 > ![](https://raw.githubusercontent.com/msuzen/leymosun/refs/heads/main/assets/cat.png)  
-> **Figure** Empirical spectral density for mixed ensemble at $\mu=0.8$, so called `Wigner's Cats` with error bars. (See the lecture.)
+> **Figure** Empirical spectral density for mixed ensemble at $\mu=0.8$, so called `Wigner's Cats` with error bars. (See the lecture.) 
+> This is also known as `Wigner Cat Phases`, see [video](https://www.youtube.com/watch?v=hUih86O_uaw).
+> [suzen25](https://arxiv.org/abs/2512.22169). 
 
 ## Installation 
 
@@ -30,7 +32,7 @@ The package provides tools and utilities for randomness based research with `Hig
 library function is called. 
 
 Having non-reproducible and unpredictable RNGs could improve Monte Carlo and similar randomness 
-based computational science experimentations. Non-reproducible RNGs can still generate reproducible
+based computational science experimentation. Non-reproducible RNGs can still generate reproducible
 research. Critical components in this direction is Uncertainty Quantification (UQ). Leymosun 
 implements bootstrapped based UQ and confidence interval generations. 
 
@@ -91,9 +93,20 @@ Papers, datasets and other material that used `leymosun`.
 
 ## Citation
 
-We would be grateful for a citation of our paper(s) if you use `leymosun` or ideas from the package in your research. Initial introduction of mixed matrix ensembles and MMES algorithm with M-shaped (Wigner's Cat) density [suzen21]. The following is the bibtex entry
+We would be grateful for a citation of our paper(s) if you use `leymosun` or ideas from the package in your research. Initial introduction of mixed matrix ensembles and MMES algorithm with M-shaped (Wigner's Cat) density [suzen21, suzen25]. The following is the bibtex entry
 
 ```
+
+@article{suzen25,
+  title={Wigner Cat Phases: A finely tunable system for exploring the transition to quantum chaos}, 
+  author={S{\"u}zen, M.},
+  year={2025},
+  eprint={2512.22169},
+  archivePrefix={arXiv},
+  primaryClass={quant-ph},
+  url={https://arxiv.org/abs/2512.22169}, 
+}
+
 @article{suzen21,
   title={Empirical deviations of semicircle law in mixed-matrix ensembles},
   author={S{\"u}zen, Mehmet},
