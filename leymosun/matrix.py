@@ -19,6 +19,28 @@ def ensemble(
     return [sampler(matrix_order) for _ in range(ensemble_size)]
 
 
+def get_mixed_orders(
+    matrix_order: int, ensemble_size: int, degree_of_mixture: float
+) -> list:
+    """
+    Compute mixed orders
+
+    We compute required mixed orders for a given mixture.
+    Mixture parameter is interpreted as an order parameter from
+    statistical physics point of view.
+
+    Args:
+    matrix_order: A square matrix size, order.
+    ensemble_size: The number of matrices to generate.
+    degree_of_mixture: This sets the mixture level [0,1],
+    closer to 1.0 ensemble is closer to standard ensemble. 
+
+    Returns:
+        A list of integers representing required orders in the mixed ensemble
+    """
+    return [binomial(n=matrix_order, p=degree_of_mixture) for _ in range(ensemble_size)]
+
+
 def mixed_ensemble(
     matrix_order: int,
     ensemble_size: int,
@@ -33,15 +55,18 @@ def mixed_ensemble(
         matrix_order: A square matrix size, order.
         ensemble_size: The number of matrices to generate.
         degree_of_mixture: This sets the mixture level [0,1],
-        closer to 1.0 ensemble is closer to
+        closer to 1.0 ensemble is closer to standard ensemble. 
         sampler: A function that samples the matrix ensemble.
 
     Returns:
         Sampled representative mixed matrix ensemble, 1D list.
+    
     """
     mixed_sample = []
-    for _ in range(ensemble_size):
-        mixed_order = binomial(n=matrix_order, p=degree_of_mixture)
+    mixed_orders_in_ensemble = get_mixed_orders(
+        matrix_order, ensemble_size, degree_of_mixture
+    )
+    for mixed_order in mixed_orders_in_ensemble:
         mixed_sample.append(sampler(mixed_order))
     return mixed_sample
 

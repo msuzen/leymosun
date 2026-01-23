@@ -5,8 +5,9 @@
 [![Downloads](https://pepy.tech/badge/leymosun/month)](https://pepy.tech/project/leymosun)
 [![Static Badge](https://img.shields.io/badge/HAL--Science-hal--03464130-blue)](https://hal.science/hal-03464130/)
 ![Static Badge](https://img.shields.io/badge/Produce--of-Cyprus-D57800)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17912257.svg)](https://doi.org/10.5281/zenodo.17912257)
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17912257.svg)](https://doi.org/10.5281/zenodo.17912257)  
+[![arXiv:2512.22169](https://img.shields.io/badge/arXiv-2512.22169-B31B1B.svg)](https://arxiv.org/abs/2512.22169)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18171032.svg)](https://doi.org/10.5281/zenodo.18171032)  
 
 A package for randomness based research. 
 
@@ -28,8 +29,7 @@ specific release.
 
 ## Approach and features
 
-The package provides tools and utilities for randomness based research with `High-Entropy Random Number Generation (HE-RNG)`. It means generation is performed with non-deterministic seeds every time a random
-library function is called. 
+The package provides tools and utilities for randomness based research with `High-Entropy Random Number Generation (HE-RNG)`. It means generation is performed with non-deterministic seeds every time a random library function is called. 
 
 Having non-reproducible and unpredictable RNGs could improve Monte Carlo and similar randomness 
 based computational science experimentation. Non-reproducible RNGs can still generate reproducible
@@ -71,6 +71,8 @@ Lectures notes that introduce randomization concepts with the usage of `Leymosun
 * [wigner_semicircle.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_semicircle.ipynb): `Lecture on the Wigner's semicircle law`. The Wigner Semicircle law for the Gaussian Orthogonal Ensemble (GOE), comparison with the analytical case. 
 * [wigner_dyson_spacing.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_dyson_spacing.ipynb): `Lecture on the Wigner-Dyson nearest-neighbour distribution`. The Wigner-Dyson spacing law for the Gaussian Orthogonal Ensemble (GOE), comparison with the analytical case. 
 * [wigner_semicircle_mixed.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_semicircle_mixed.ipynb): `Lecture on the Wigner's cats`. Deviations from the Wigner Semicircle law for the mixed-Gaussian Orthogonal Ensemble (GOE). This would demonstrate, so-called "Wigner's Cats", i.e., the deviation makes the density looks like cat. 
+* [mixed_construction.ipynb.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/mixed_construction.ipynb.ipynb): `Construction of a mixed random matrix ensemble` understanding the inner
+details of constructing mixed ensemble.
 * [spectral_unfolding.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/spectral_unfolding.ipynb): ` Self-consistent spectral unfolding` understanding what is a spectral unfolding. 
 * [he_rng_nist.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/he_rng_nist.ipynb): `Lecture on Understanding High-Entropy RNGs with NIST  benchmark`. This lecture provides a way to test different RNGs or usage of RNGs via standard quality tests. 
 
@@ -88,6 +90,8 @@ Lectures notes that introduce randomization concepts with the usage of `Leymosun
 
 Papers, datasets and other material that used `leymosun`. 
 
+* Wigner Cat Phases: A finely tunable system for exploring the transition to quantum chaos, M. Suzen, arXiv, [arXiv:2512.22169](https://arxiv.org/abs/2512.22169) (2025).
+   * Associated dataset [Zenodo](https://zenodo.org/records/18171032)
 * Empirical deviations of semicircle law in mixed-matrix ensembles, M. Suzen, HAL-Science, [hal-03464130](https://hal.science/hal-03464130/) (2021).    
  2025 improvements with the `leymosun` package.
 
@@ -120,7 +124,7 @@ We would be grateful for a citation of our paper(s) if you use `leymosun` or ide
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
  [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-(c) 2025   
+(c) 2026   
 M. Süzen
 
 All codes are released under GPLv3.  

@@ -1,3 +1,9 @@
+v0.2.51
+
+* README: Link to MLB/mGOE transition paper 12/2025, and its dataset badge.
+* New method `get_mixed_orders` and testing, listing conforming orders for mRMT.
+* New lecture `mixed_construction.ipynb`, added to lecture tests.
+
 v0.2.43
 
 * Fix image `effect_unfolding.png` under assets.

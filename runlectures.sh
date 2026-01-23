@@ -47,9 +47,19 @@ echo " "
 echo " "
 echo " Running spectral_unfolding.ipynb"
 echo " "
-rm -f lecturePy/wigner_semicircle.py
+rm -f lecturePy/spectral_unfolding.py
 jupyter nbconvert --to python lectures/spectral_unfolding.ipynb --output-dir=./lecturePy --log-level=ERROR
 python lecturePy/spectral_unfolding.py
 echo " "
 echo " Success running spectral_unfolding.ipynb"
+echo " "
+# mixed_construction.ipynb
+echo " "
+echo " Running mixed_construction.ipynb"
+echo " "
+rm -f lecturePy/mixed_construction.py
+jupyter nbconvert --to python lectures/mixed_construction.ipynb --output-dir=./lecturePy --log-level=ERROR
+python lecturePy/mixed_construction.py
+echo " "
+echo " Success running mixed_construction.ipynb"
 echo " "
