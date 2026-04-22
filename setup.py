@@ -18,10 +18,9 @@ setup(
     description="High-Entropy Randomness Research Toolkit. High-Entropy Random Number Generator (HE-RNGs). \
                 Generation of random matrices in canonical ensembles. Generating of mixed matrix ensembles via \
                 Mixed Matrix Ensemble Sampling (MMES) algorithm. \
-                Matrix utilities, spectral analysis, spectral unfolding, nearest-neighbor spacing, \
+                Matrix utilities, spectral analysis, krylov and quantum core, spectral unfolding, nearest-neighbor spacing, \
                 mean adjacent gap ratio, analytic expressions from theory and \
-                uncertainty quantification tools. Quantum Core: Integrated, fidelity, spread complexity over \
-                unitary evolution",
+                uncertainty quantification.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/msuzen/leymosun",
