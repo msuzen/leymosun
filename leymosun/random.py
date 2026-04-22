@@ -1,6 +1,6 @@
-from numpy.random import PCG64, RandomState, BitGenerator
+from numpy.random import PCG64, RandomState, BitGenerator  # type: ignore
 import secrets
-import numpy as np
+import numpy as np  # type: ignore
 
 
 def he_random_integer(bits: int = 64):
@@ -95,7 +95,8 @@ def random(size: int, bitgen: BitGenerator = PCG64, seed_bits: int = 64):
     rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
     return rng.random(size)
 
-def normal(loc:float=0.0, scale:float=1.0, size:int=None, bitgen: BitGenerator = PCG64, seed_bits: int = 64):
+
+def normal(loc: float = 0.0, scale: float = 1.0, size: int = None, bitgen: BitGenerator = PCG64, seed_bits: int = 64):  # type: ignore
     """Generate Normal distribution numbers, or given Gaussian parameters
 
      Args:
@@ -112,10 +113,17 @@ def normal(loc:float=0.0, scale:float=1.0, size:int=None, bitgen: BitGenerator =
     rng = get_rng(bitgen=bitgen, seed_bits=seed_bits)
     return rng.normal(loc=loc, scale=scale, size=size)
 
-def choice(size:int, ndraws:int, replace:bool, bitgen: BitGenerator = PCG64, seed_bits: int = 64):
+
+def choice(
+    size: int,
+    ndraws: int,
+    replace: bool,
+    bitgen: BitGenerator = PCG64,
+    seed_bits: int = 64,
+):
     """Draw integers from a sequence given size, with or without replacement.
        Zero being the first index.
-    
+
      Args:
         size: upper size of the set.
         ndraws: Number of draws

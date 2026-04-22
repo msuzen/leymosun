@@ -10,7 +10,7 @@ from leymosun.spectral import (
 from leymosun.matrix import ensemble, mixed_ensemble
 from leymosun.gaussian import goe
 from leymosun.random import normal
-import numpy as np
+import numpy as np # pyright: ignore[reportMissingImports]
 
 
 def test_apply_pbc():

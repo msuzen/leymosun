@@ -1,3 +1,11 @@
+# NEWS
+
+v0.4.12
+
+* README.md Updates lectures, capabilities and paper.
+* New lectures: freezing_mgoe, krylov_fidelity_entangled, rozensweig_porter_gap_ratio
+* New modules: gram, krylov, qcore, rozensweig.
+
 v0.2.51
 
 * README: Link to MLB/mGOE transition paper 12/2025, and its dataset badge.
@@ -11,16 +19,16 @@ v0.2.43
 
 v0.2.42
 
-* `README.md`: 
- * Note regarding reproducibility and non-reproducible RNGs.
- * Minor typo.
+* `README.md`:
+* Note regarding reproducibility and non-reproducible RNGs.
+* Minor typo.
 * Updated Zenodo release.
 * `nnsd`, new switch `unfold`, defaults to TRUE
 * `spectral_unfolding.ipynb` new lecture and added to lecture's test.
 
 v0.2.38
 
-* `runlectures.sh` is added for running lectures notebooks on CLI for testing. 
+* `runlectures.sh` is added for running lectures notebooks on CLI for testing.
 * Update in README, new section about developments.
 * Update how version is updated in `setup.py` dropping `exec` like practice.
 
@@ -42,15 +50,14 @@ v0.2.11
 
 * feature: New lecture: Wigner-Dyson Nearest neigbour spacing distribution. `wigner_spacing.ipynb`.
 * feature: Spectral unfolding functionaliy implemented and tested.
-* feature: Spectra with Uncertainty Quantification (UQ) for distributions. 
-  * Update lectures with UQ. 
-  * Removed eigenvalue pooling. 
+* feature: Spectra with Uncertainty Quantification (UQ) for distributions.
+  * Update lectures with UQ.
+  * Removed eigenvalue pooling.
 * feature: `choice` for random module
 * feature: `pdf` supporting arbitrary distance locations.
 * maintainance: `get_density` renamed to `pdf` and into `stats` module.
 * maintainance: README installation notes.
 * maintainance: Updates on `wigner_cat.ipynb` lecture, `setup.py` and `README.md` mentioning MMES algorithm.
-
 
 v0.1.55
 
@@ -58,11 +65,8 @@ v0.1.55
 * Fix image showing Leymosun on README.
 * Lecture  wigner_semicircle.ipynb exercise 2, providing hint on scale.
 
-
 v0.1.54
 
 * New functions for HE-RNG module: random, normal and unit tests for them.
 * Updates in README: Citation, some more details on HE-RNG, FQ url for some of the links.
 * NEWS file for version update details.
-
-

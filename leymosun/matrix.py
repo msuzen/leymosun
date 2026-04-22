@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np # pyright: ignore[reportMissingImports]
 from typing import Callable
 from leymosun.random import binomial
 

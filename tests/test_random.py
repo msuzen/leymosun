@@ -1,6 +1,6 @@
 from leymosun.random import he_random_integer, get_rng, binomial, normal, choice
-from numpy.random import RandomState, BitGenerator, PCG64
-import numpy as np
+from numpy.random import RandomState, BitGenerator, PCG64 # pyright: ignore[reportMissingImports]
+import numpy as np # pyright: ignore[reportMissingImports]
 
 
 def test_random_integer():

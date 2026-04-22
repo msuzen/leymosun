@@ -1,6 +1,6 @@
-import numpy as np
+import numpy as np # type: ignore
 from leymosun.random import get_rng
-from numpy.random import PCG64, BitGenerator
+from numpy.random import PCG64, BitGenerator # type: ignore
 
 
 def goe(matrix_order: int, scale: float = 1.0, loc: float= 0.0, bitget: BitGenerator = PCG64, seed_bits: int = 64) -> np.array:

@@ -1,6 +1,6 @@
 from leymosun.matrix import ensemble, mixed_ensemble, offdiagonal, get_mixed_orders
 from leymosun.gaussian import goe
-import numpy as np
+import numpy as np # pyright: ignore[reportMissingImports]
 
 
 def test_ensemble_size_goe():

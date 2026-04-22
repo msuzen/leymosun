@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np # pyright: ignore[reportMissingImports]
 from leymosun.stats import pdf
 from leymosun.random import normal, choice
 

@@ -20,7 +20,7 @@ setup(
                 Mixed Matrix Ensemble Sampling (MMES) algorithm. \
                 Matrix utilities, spectral analysis, spectral unfolding, nearest-neighbor spacing, \
                 mean adjacent gap ratio, analytic expressions from theory and \
-                uncertainty quantification tools.",
+                uncertainty quantification tools. ",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/msuzen/leymosun",

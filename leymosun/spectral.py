@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np # type: ignore
 from itertools import cycle
 from leymosun.stats import pdf, bootstrap_observed_matrix_ci
 
