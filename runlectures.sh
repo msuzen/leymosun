@@ -99,6 +99,16 @@ echo " "
 echo " Success running krylov_fidelity_entangled.ipynb"
 echo " "
 
+# Lecture 9: wigner_cats_standalone.ipynb
+echo " "
+echo " Running wigner_cats_standalone.ipynb"
+echo " "
+rm -f lecturePy/wigner_cats_standalone.py
+jupyter nbconvert --to python lectures/wigner_cats_standalone.ipynb --output-dir=./lecturePy --log-level=ERROR
+python lecturePy/wigner_cats_standalone.py
+echo " "
+echo " Success running wigner_cats_standalone.ipynb"
+echo " "
 
 
 

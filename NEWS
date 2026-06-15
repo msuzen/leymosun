@@ -1,5 +1,11 @@
 # NEWS
 
+v0.4.21
+
+* New lecture on standalone bimodality
+  inverse participation ratio and state permutation demo.
+* Updates on README and setup for package description.
+
 v0.4.14
 
 * Minor update on package description.

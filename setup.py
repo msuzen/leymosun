@@ -15,12 +15,9 @@ if (sys.version_info.major, sys.version_info.minor) < (3, 11):
 setup(
     name="leymosun",
     version=__version__,
-    description="High-Entropy Randomness Research Toolkit. High-Entropy Random Number Generator (HE-RNGs). \
-                Generation of random matrices in canonical ensembles. Generating of mixed matrix ensembles via \
-                Mixed Matrix Ensemble Sampling (MMES) algorithm. \
-                Matrix utilities, spectral analysis, krylov and quantum core, spectral unfolding, nearest-neighbor spacing, \
-                mean adjacent gap ratio, analytic expressions from theory and \
-                uncertainty quantification.",
+    description="Quantum information, statistics, dynamics and closely related computational tools. \
+                 Quantum core, random matrix tools, spectral analysis tool, advanced linear algebra. \
+                 Randomness tools.", 
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/msuzen/leymosun",

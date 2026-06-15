@@ -1,4 +1,6 @@
-# Leymosun: High-Entropy Randomness Research Toolkit
+# Leymosun Science:  Quantum Research Toolkit
+
+Quantum information, statistics, dynamics and closely related computational tools.
 
 [![PyPI version](https://img.shields.io/pypi/v/leymosun.svg?maxAge=2591000)](https://pypi.org/project/leymosun/)
 [![Downloads](https://static.pepy.tech/badge/leymosun)](https://pepy.tech/project/leymosun)
@@ -10,33 +12,17 @@
 [![arXiv:2604.14224](https://img.shields.io/badge/arXiv-2604.14224-B31B1B.svg)](https://arxiv.org/abs/2604.14224)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18171032.svg)](https://doi.org/10.5281/zenodo.18171032)  
 
-A package for randomness based research: Collection of reference implementations.
-
-> ![](https://raw.githubusercontent.com/msuzen/leymosun/refs/heads/main/assets/cat.png)  
-> **Figure** Empirical spectral density for mixed ensemble at $\mu=0.8$, so called `Wigner's Cats` with error bars. (See the lecture.)
-> This is also known as `Wigner Cat Phases`, see [video](https://www.youtube.com/watch?v=hUih86O_uaw).
-> [suzen25](https://arxiv.org/abs/2512.22169).
 
 ## Approach and features
 
-The package provides tools and utilities for randomness based research with `High-Entropy Random Number Generation (HE-RNG)`. It means generation is performed with non-deterministic seeds every time a random library function is called.
+Quantum information, statistics, dynamics and closely related computational tools.
 
-Having non-reproducible and unpredictable RNGs could improve Monte Carlo and similar randomness
-based computational science experimentation. Non-reproducible RNGs can still generate reproducible
-research. Critical components in this direction is Uncertainty Quantification (UQ). Leymosun
-implements bootstrapped based UQ and confidence interval generations.
+## Quantum Core
 
-### High-entropy random number utilities
-
-The core package is providing strong randomness improving the simulation quality. We use NumPy grammar and as a backend.
-
-* HE-RNG random states.
-* Distributions:
-  * Bionomial
-  * Uniform integer on the given range
-  * Uniform float on the given range
-  * Normal distribution (Gaussian)
-  * Random sampling from a set, choice.
+* Basic two states.
+* Prepare maximally entangled.
+* Pure state fidelity and spread complexity unitary evolution.
+* Spread complexity Krylov unitary evolution.
 
 ### Random Matrices
 
@@ -55,17 +41,22 @@ The core package is providing strong randomness improving the simulation quality
 * Gram-Schmidt procedure.
 * Krylov bases and Lanczos algorithm.
 
-## Quantum Core
-
-* Basic two states.
-* Prepare maximally entangled.
-* Pure state fidelity and spread complexity unitary evolution.
-* Spread complexity Krylov unitary evolution.
-
 ### Statistics
 
 * Centered PDF computation.
 * Bootstrapped uncertainty quantification given observation matrix.
+
+### High-entropy random number utilities
+
+The core package is providing strong randomness improving the simulation quality. We use NumPy grammar and as a backend.
+
+* HE-RNG random states.
+* Distributions:
+  * Bionomial
+  * Uniform integer on the given range
+  * Uniform float on the given range
+  * Normal distribution (Gaussian)
+  * Random sampling from a set, choice.
 
 ## Installation
 
@@ -94,6 +85,7 @@ They also serve as functional tests.
 * Lecture 7: [rosenzweig_porter_gap_ratio.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/rosenzweig_porter_gap_ratio.ipynb): `Rosenzweig-Porter Ensemble and Gap ratio:  Regular to chaotic quantum system`. A random matrix ensemble that can exhibit different phases.
 * Lecture 8: [krylov_fidelity_entangled.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/krylov_fidelity_entangled.ipynb): `Spread Complexity and fidelity for entangled states`.
 Demonstration of computing fidelity and spread complexity.
+* Lecture 9: [wigner_cats_standalone.ipynb](https://github.com/msuzen/leymosun/blob/main/lectures/wigner_cats_standalone.ipynb): `Standalone Wigner Cat Phases: Inverse Participation Ratios` This lecture demonstrates Wigner Cat phases in a vanilla case: Permutation and IPR distribution.
 
 Additional lecture:
 
