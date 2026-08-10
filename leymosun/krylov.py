@@ -9,8 +9,43 @@ def lanczos(H, psi0, up_to_dim):
     Vol. 45, No. 4, October 1950
     C. Lanczos
     https://www.cs.umd.edu/~oleary/lanczos1950.pdf
-    * Algorithm is summarized here 
+    * Algorithm is summarized here  (misses n+1)
       Camargo et. al. J. High Energ. Phys. 2024, 241 (2024).
+      
+    * As explained in:
+      M.Suzen, arXiv, https://arxiv.org/abs/2604.14224 (2026)
+      
+    Verified formulation of Lanczos algorithm:
+      
+    Initial conditions for $n=0, 1$ must be available before 
+    we can iterate in computing Krylov bases vectors for $n > 1$. 
+    We start with $H$ (Hamiltonian matrix) and initial 
+    state $\psi(0)$. At $n=0$, 
+
+    \begin{eqnarray}
+    b_{0} & = & 0.    \\
+    |K_{0}\rangle & = & |\psi(0) \rangle, \\       
+    a_{0} & = &  \langle K_{0}|H| K_{0} \rangle.    
+    \end{eqnarray}
+
+    The next step for $n=1$ is written as follows, 
+
+    \begin{eqnarray}
+    |A_{1} \rangle & = & (H-a_{0} I ) |K_{0} \rangle \\    
+    b_{1} & = & \langle A_{1} | A_{1} \rangle^{1/2}    \\
+    |K_{1} \rangle & = & b_{1}^{-1} |A_{1} \rangle   \\
+    a_{1} & = &  \langle K_{1}|H| K_{1} \rangle  
+    \end{eqnarray}
+
+    Similarly but with a minor tweak, the expressions for $n > 1$ read,
+
+    \begin{eqnarray}
+    |A_{n+1} \rangle & = & (H-a_{n} I ) |K_{n} \rangle - b_{n} |K_{n-1} \rangle \\
+    b_{n+1} & = & \langle A_{n+1} | A_{n+1} \rangle^{1/2} \\  
+    |K_{n+1} \rangle & = &  b_{n+1}^{-1} |A_{n+1} \rangle \\
+    a_{n+1} & = & \langle K_{n+1}|H| K_{n+1} \rangle.   
+    \end{eqnarray}
+  
 
     Args:
         H: Hamiltonian matrix, 2D real array

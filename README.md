@@ -2,22 +2,35 @@
 
 Quantum information, statistics, dynamics and closely related computational tools.
 
+![Static Badge](https://img.shields.io/badge/Produce--of-Cyprus-D57800)
 [![PyPI version](https://img.shields.io/pypi/v/leymosun.svg?maxAge=2591000)](https://pypi.org/project/leymosun/)
 [![Downloads](https://static.pepy.tech/badge/leymosun)](https://pepy.tech/project/leymosun)
 [![Downloads](https://pepy.tech/badge/leymosun/month)](https://pepy.tech/project/leymosun)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17578756.svg)](https://doi.org/10.5281/zenodo.17578756)
+Papers and datasets using the package:
+
 [![Static Badge](https://img.shields.io/badge/HAL--Science-hal--03464130-blue)](https://hal.science/hal-03464130/)
-![Static Badge](https://img.shields.io/badge/Produce--of-Cyprus-D57800)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17912257.svg)](https://doi.org/10.5281/zenodo.17912257)  
 [![arXiv:2512.22169](https://img.shields.io/badge/arXiv-2512.22169-B31B1B.svg)](https://arxiv.org/abs/2512.22169)
 [![arXiv:2604.14224](https://img.shields.io/badge/arXiv-2604.14224-B31B1B.svg)](https://arxiv.org/abs/2604.14224)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18171032.svg)](https://doi.org/10.5281/zenodo.18171032)  
 
+## Installation
 
-## Approach and features
+It is recommended that latest stable package is released on the Python Package Index ([PyPI](https://pypi.org/project/leymosun/)). PyPI version should be installed via `pip`.
 
-Quantum information, statistics, dynamics and closely related computational tools.
+```bash
+pip install leymosun
+```
 
-## Quantum Core
+It is recommended that package shouldn't be installed via github version control, unless it is a
+specific release. 
+
+## Features
+
+We provide full functionality and capabilities in the lectures section.
+Here we summarize them by topic.
+
+### Quantum Core
 
 * Basic two states.
 * Prepare maximally entangled.
@@ -56,18 +69,7 @@ The core package is providing strong randomness improving the simulation quality
   * Uniform integer on the given range
   * Uniform float on the given range
   * Normal distribution (Gaussian)
-  * Random sampling from a set, choice.
-
-## Installation
-
-It is recommended that latest stable package is released on the Python Package Index ([PyPI](https://pypi.org/project/leymosun/)). PyPI version should be installed via `pip`.
-
-```bash
-pip install leymosun
-```
-
-It is recommended that package shouldn't be installed via github version control, unless it is a
-specific release.  
+  * Random sampling from a set, choice. 
 
 ## Lectures
 
@@ -113,12 +115,11 @@ Please cite this package as follows
 ```bibtex
 @misc{suzen25,
   author       = {Suzen, Mehmet},
-  title        = {Leymosun: High-Entropy Randomness Research Toolkit},
-  month        = dec,
-  year         = 2025,
+  title        = {Leymosun Science: Quantum Research Toolkit},
+  year         = {2026},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.17937440},
-  url          = {https://doi.org/10.5281/zenodo.17937440},
+  doi          = {10.5281/zenodo.17578756},
+  url          = {https://doi.org/10.5281/zenodo.17578756},
 }
 ```
 

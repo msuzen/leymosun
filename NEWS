@@ -1,5 +1,15 @@
 # NEWS
 
+0.4.32
+
+* README: Package Citation, minor section shuffle.
+* `lanczos` method: Latex formulas are added and verified.
+* Issue 19 resolved:
+  * Weighting with n+1 for `spread_complexity`:
+  Fidelity is within the spread and no scaling with bases size.
+  * Length verification `spread_complexity_evolution`.
+  * `krylov_fidelity_entangled.ipynb` sync with the implementation.
+
 v0.4.21
 
 * New lecture on standalone bimodality

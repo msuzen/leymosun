@@ -126,8 +126,8 @@ def spread_complexity(V_basis, psit):
     size_basis = V_basis.shape[1]
     c_t = 0.0
     for n in range(size_basis):
-        c_t = c_t + n*np.abs(np.vdot(V_basis[:,n], psit))**2
-    return c_t/size_basis
+        c_t = c_t + (n+1)*np.abs(np.vdot(V_basis[:,n], psit))**2
+    return c_t
 
 
 def spread_complexity_evolution(K_s, H, psi0, delta, ndelta):
