@@ -1,18 +1,23 @@
 # Leymosun Science:  Quantum Research Toolkit
 
-Quantum information, statistics, dynamics and closely related computational tools.
+`Leymosun Science` (`Lemesos Science`): Quantum information, statistics, dynamics and closely related computational tools.
 
 ![Static Badge](https://img.shields.io/badge/Produce--of-Cyprus-D57800)
 [![PyPI version](https://img.shields.io/pypi/v/leymosun.svg?maxAge=2591000)](https://pypi.org/project/leymosun/)
 [![Downloads](https://static.pepy.tech/badge/leymosun)](https://pepy.tech/project/leymosun)
 [![Downloads](https://pepy.tech/badge/leymosun/month)](https://pepy.tech/project/leymosun)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17578756.svg)](https://doi.org/10.5281/zenodo.17578756)
-Papers and datasets using the package:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17578756.svg)](https://doi.org/10.5281/zenodo.17578756)  
 
-[![Static Badge](https://img.shields.io/badge/HAL--Science-hal--03464130-blue)](https://hal.science/hal-03464130/)
-[![arXiv:2512.22169](https://img.shields.io/badge/arXiv-2512.22169-B31B1B.svg)](https://arxiv.org/abs/2512.22169)
-[![arXiv:2604.14224](https://img.shields.io/badge/arXiv-2604.14224-B31B1B.svg)](https://arxiv.org/abs/2604.14224)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18171032.svg)](https://doi.org/10.5281/zenodo.18171032)  
+
+## Papers and datasets using the package
+
+| | |
+| --- | --- |
+| [![Static Badge](https://img.shields.io/badge/HAL--Science-hal--03464130-blue)](https://hal.science/hal-03464130/) | Empirical deviations of semicircle law in mixed-matrix ensembles |
+| [![arXiv:2512.22169](https://img.shields.io/badge/arXiv-2512.22169-B31B1B.svg)](https://arxiv.org/abs/2512.22169) | Wigner Cat Phases: A finely tunable system for exploring the transition to quantum chaos |
+| [![arXiv:2604.14224](https://img.shields.io/badge/arXiv-2604.14224-B31B1B.svg)](https://arxiv.org/abs/2604.14224) | Scrambling of Entanglement from Integrability to Chaos: Bootstrapped Time-Integrated Spread Complexity |
+| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18171032.svg)](https://doi.org/10.5281/zenodo.18171032) | Supplement and Dataset for Bootstrapped Time-Integrated Spread Complexity (Zenodo Repository) |
+
 
 ## Installation
 
@@ -97,6 +102,9 @@ Additional lecture:
 
 * Philosophy  
   There is a common misconception in computational sciences that speed is the ultimate goal, however primary objective is scientific correctness first. For this reasons, scientific correctness is taken precedence over speed in the development of the package. For proven methods being a baseline, we might implement faster versions.
+* Installing: 
+  * In clean environment run `pip install .` for dependencies. 
+  * `pip install ".[dev]"` for the dev dependencies.
 * Testing
   * `tests` and `nbconvert` should be present as recommended dependency.
   * Test script should pass before any release.

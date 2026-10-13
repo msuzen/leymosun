@@ -9,8 +9,8 @@ with open("README.md") as f:
 
 import sys
 
-if (sys.version_info.major, sys.version_info.minor) < (3, 11):
-    sys.exit(" Python <= 3.11 is not supported or preferred")
+if (sys.version_info.major, sys.version_info.minor) < (3, 15):
+    sys.exit(" Python < 3.15 is not supported or preferred")
 
 setup(
     name="leymosun",
@@ -26,13 +26,19 @@ setup(
     license="GPL-3",
     packages=["leymosun"],
     install_requires=[
-        "numpy == 2.3.1",
-        "matplotlib == 3.10.3",
-        "dill == 0.4.0"
+        "numpy >= 2.5.3",
+        "matplotlib >= 3.10.3",
+        "dill >= 0.4.1"
     ],
     test_suite="tests",
     extras_require={
-        "test":["pytest==8.4.2", "coverage==7.10.7", "pytest-cov==7.0.0", "nbconvert==7.16.6"]
+        "dev": [
+            "pytest >= 8.4.2",
+            "coverage >= 7.10.7",
+            "pytest-cov >= 7.0.0",
+            "nbconvert >= 7.16.6",
+            "ipython >= 9.17.1",
+        ]
     },
     zip_safe=False,
 )
